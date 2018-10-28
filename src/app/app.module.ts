@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ChartboardComponent } from './chartboard/chartboard.component';
 
+/* library for google charts */
+import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 @NgModule({
   declarations: [
     AppComponent,
@@ -12,7 +14,8 @@ import { ChartboardComponent } from './chartboard/chartboard.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    Ng2GoogleChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
