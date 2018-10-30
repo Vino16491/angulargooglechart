@@ -1,11 +1,11 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 
 @Component({
   selector: "app-chartboard",
   templateUrl: "./chartboard.component.html",
   styleUrls: ["./chartboard.component.scss"]
 })
-export class ChartboardComponent implements OnInit {
+export class ChartboardComponent {
   pieChartData = {
     chartType: "PieChart",
     dataTable: [
@@ -41,7 +41,16 @@ export class ChartboardComponent implements OnInit {
     ],
     options: {title: 'Countries', allowHtml: true}
   };
-  constructor() {}
-
-  ngOnInit() {}
+  
+  public barChart = {
+    chartType: "BarChart",
+    dataTable: [
+      ['Year', 'Sales', 'Expenses', 'Profit'],
+      ['2014', 1000, 400, 200],
+      ['2015', 1170, 460, 250],
+      ['2016', 660, 1120, 300],
+      ['2017', 1030, 540, 350]
+    ],
+    options: { title: "Company Performance" }
+  }
 }
