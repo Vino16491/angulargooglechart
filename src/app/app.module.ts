@@ -7,10 +7,12 @@ import { ChartboardComponent } from './chartboard/chartboard.component';
 
 /* library for google charts */
 import { Ng2GoogleChartsModule } from 'ng2-google-charts';
+import { ChartJsComponent } from './chart-js/chart-js.component';
 @NgModule({
   declarations: [
     AppComponent,
-    ChartboardComponent
+    ChartboardComponent,
+    ChartJsComponent
   ],
   imports: [
     BrowserModule,
