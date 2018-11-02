@@ -9,19 +9,21 @@ export class ChartJsComponent implements OnInit, AfterViewInit {
   @ViewChild("lineChart") lineChart:ElementRef;
   public context : CanvasRenderingContext2D;
   chart: any;
+
+  chart1:Chart;
   constructor() {}
 
   ngOnInit() {
     console.log("hello world");
     this.showChart();
+    this.showchart1();
   }
 
   ngAfterViewInit() {
-    this.showChart();
-    console.log(this.chart.chart);
+
   }
   showChart(){
-    this.context = (<HTMLCanvasElement>this.lineChart.nativeElement).getContext('2d');
+    this.context = this.lineChart.nativeElement.getContext('2d');
     return this.chart = new Chart(this.context, {
       type: "line",
       data: {
@@ -54,4 +56,47 @@ export class ChartJsComponent implements OnInit, AfterViewInit {
       }
     });
   }
+
+  showchart1(){
+    console.log('hwllo')
+    this.chart1 = new Chart('canvas', {
+      type: 'doughnut',
+      data: {
+        labels: ['Solicitado', 'Entregado', 'Faltante'],
+        datasets: [
+          {
+            label: 'test',
+            data: [
+              100, 200, 300
+            ],
+            backgroundColor: ['#0074D9', '#2ECC40', '#FF4136']
+          }
+        ]
+      },
+      options: {
+        title: {
+          display: false,
+          text: 'Color test'
+        },
+        legend: {
+          position: 'left',
+          display: true,
+          fullWidth: true,
+          labels: {
+            fontSize: 11
+          }
+        },
+        scales: {
+          xAxes: [{
+            display: true
+          }],
+          yAxes: [{
+            display: true
+          }]
+        }
+      }
+    });
+  }
+
+ 
 }
