@@ -23,8 +23,8 @@ export class ChartJsComponent implements OnInit, AfterViewInit {
 
   }
   showChart(){
-    this.context = this.lineChart.nativeElement.getContext('2d');
-    return this.chart = new Chart(this.context, {
+    // this.context = this.lineChart.nativeElement.getContext('2d');
+    return this.chart = new Chart('canvas1', {
       type: "line",
       data: {
         labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
@@ -59,7 +59,7 @@ export class ChartJsComponent implements OnInit, AfterViewInit {
 
   showchart1(){
     console.log('hwllo')
-    this.chart1 = new Chart('canvas', {
+    return this.chart1 = new Chart('canvas', {
       type: 'doughnut',
       data: {
         labels: ['Solicitado', 'Entregado', 'Faltante'],
