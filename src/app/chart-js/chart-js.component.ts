@@ -1,13 +1,11 @@
-import { Component, OnInit, ViewChild, AfterViewInit, ElementRef } from "@angular/core";
+import { Component, OnInit} from "@angular/core";
 import { Chart } from "chart.js";
 @Component({
   selector: "app-chart-js",
   templateUrl: "./chart-js.component.html",
   styleUrls: ["./chart-js.component.scss"]
 })
-export class ChartJsComponent implements OnInit, AfterViewInit {
-  @ViewChild("lineChart") lineChart:ElementRef;
-  public context : CanvasRenderingContext2D;
+export class ChartJsComponent implements OnInit{
   chart: any;
 
   chart1:Chart;
@@ -19,9 +17,6 @@ export class ChartJsComponent implements OnInit, AfterViewInit {
     this.showchart1();
   }
 
-  ngAfterViewInit() {
-
-  }
   showChart(){
     // this.context = this.lineChart.nativeElement.getContext('2d');
     return this.chart = new Chart('canvas1', {
